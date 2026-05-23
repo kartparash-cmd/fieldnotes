@@ -1,0 +1,26 @@
+## Where this stands
+
+Case study in progress. Target completion: 2026-08-15. The full writeup lands once the research, build, and eval phases are done.
+
+## The customer scenario
+
+Hedge fund deploying LLM-driven trading agents needs production-grade guardrails, kill-switch monitoring, and regime-aware risk management.
+
+## My product canvas
+
+This case study is grounded in **WealthPilot** — an autonomous self-improving trading system built on Python + Alpaca, running 10 edge tools across signals (congressional trades, options flow, dark pool, Reddit sentiment) into a composite conviction score. The hardest engineering problem isn't generating signals — it's building a system honest enough to recognize when its signals have stopped working. Canonical writeup: [kaydenlabs.com/work/wealthpilot](https://kaydenlabs.com/work/wealthpilot).
+
+## Architectural patterns to be demonstrated
+
+- **10-layer risk control architecture** — Kelly position sizing, ATR stops, drawdown circuit breaker, regime-adjusted sizing, correlation penalties, earnings blackout windows
+- **Regime-aware autonomous kill-switch** — the Plutus agent has halt authority on detected regime shifts, not just on drawdown. Halted live in March 2026 on a 0% win rate in a choppy regime.
+- **Weekly walk-forward retrain with Monte Carlo stress validation** — logistic regression on 436 samples with time-decay weighting, validated against COVID, 2022 rate cycle, and SVB scenarios
+- **Trade-log signal-weight adaptation as a self-correcting eval loop** — 497 automated tests across 32 files
+
+## What you'll find here when it ships
+
+- Architecture diagram
+- Eval set with results
+- Cost and latency analysis
+- Failure modes documented
+- "What I'd do differently" retro

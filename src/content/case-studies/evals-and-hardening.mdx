@@ -1,0 +1,25 @@
+## Where this stands
+
+Case study in progress. Target completion: 2027-02-28. The full writeup lands once the research, build, and eval phases are done.
+
+## The customer scenario
+
+Any customer launching an LLM-powered consumer product needs systematic red-team and eval methodology before production traffic.
+
+## My product canvas
+
+This case study is grounded in **Sage in LastingPath** (cross-product) — an eval-driven hardening of Sage, the Claude reasoning layer in LastingPath, as a case study in how to instrument a consumer-AI product against the full failure space. Canonical writeup: [kaydenlabs.com/work/lastingpath](https://kaydenlabs.com/work/lastingpath).
+
+## Architectural patterns to be demonstrated
+
+- **50-prompt adversarial dataset across categories** — jailbreak, prompt injection, data exfiltration, regulated-domain edge cases (probate jurisdiction errors, tax basis miscalculations, RUFADAA violations)
+- **Regression eval suite running on every Sage prompt change** — gate prompt deploys on the eval pass rate
+- **Failure-mode taxonomy with detection-rate metrics** — categorized failures with measurable defense rate per category
+
+## What you'll find here when it ships
+
+- Architecture diagram
+- Eval set with results
+- Cost and latency analysis
+- Failure modes documented
+- "What I'd do differently" retro

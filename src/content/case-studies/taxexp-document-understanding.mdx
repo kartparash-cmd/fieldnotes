@@ -1,0 +1,25 @@
+## Where this stands
+
+Case study in progress. Target completion: 2026-12-15. The full writeup lands once the research, build, and eval phases are done.
+
+## The customer scenario
+
+CPA firm or enterprise tax/finance team automating high-volume structured document generation needs reliable extraction, validation, and human-in-the-loop fallback.
+
+## My product canvas
+
+This case study is grounded in **TaxEXP** — an automated K1 and Form 1065 tax document generation pipeline. CPA variant adapts the same engine for accounting practice workflows. Canonical writeup: [kaydenlabs.com/work](https://kaydenlabs.com/work).
+
+## Architectural patterns to be demonstrated
+
+- **High-volume structured document pipeline** — K1, Form 1065, with field-level extraction and validation
+- **Confidence-scored output with HITL fallback at threshold** — model owns the high-confidence rows; humans own the low-confidence
+- **Cost modeling across Haiku / Sonnet / Opus** — production routing by document complexity and field criticality
+
+## What you'll find here when it ships
+
+- Architecture diagram
+- Eval set with results
+- Cost and latency analysis
+- Failure modes documented
+- "What I'd do differently" retro

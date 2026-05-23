@@ -1,0 +1,26 @@
+## Where this stands
+
+Case study in progress. Target completion: 2026-11-15. The full writeup lands once the research, build, and eval phases are done.
+
+## The customer scenario
+
+Financial services or legal-tech customer building consumer-facing AI in a high-stakes regulated domain (estate, tax, healthcare, insurance) needs structured tool-calling, document understanding, compliance, and trust-by-design UX.
+
+## My product canvas
+
+This case study is grounded in **LastingPath** (live at lastingpath.com) — an estate administration platform that replaces $300/hr attorneys with a structured workflow. Sage (Claude Sonnet reasoning layer) is the brain — not a chatbot, a router that analyzes estate specifics and recommends applicable tasks. Canonical writeup: [kaydenlabs.com/work/lastingpath](https://kaydenlabs.com/work/lastingpath).
+
+## Architectural patterns to be demonstrated
+
+- **Claude Sonnet reasoning layer (Sage) as a structured workflow router** — not open-ended generation; conditional routing on jurisdiction, asset type, filing requirements
+- **OCR-driven structured form auto-population** — Tesseract.js for death certificates and financial docs, feeding 47+ guided wizards (IRS Form 56, Form 706, RUFADAA-compliant social media packets)
+- **Trust-by-design UX with full legal-event audit logging** — every decision logged, AES-256-GCM field-level encryption for sensitive fields
+- **Cron-based deadline sequencing for time-bound legal obligations** — creditor claims, tax filings, cease-and-desist windows
+
+## What you'll find here when it ships
+
+- Architecture diagram
+- Eval set with results
+- Cost and latency analysis
+- Failure modes documented
+- "What I'd do differently" retro

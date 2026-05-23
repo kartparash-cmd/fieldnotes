@@ -1,0 +1,26 @@
+## Where this stands
+
+Case study in progress. Target completion: 2026-10-15. The full writeup lands once the research, build, and eval phases are done.
+
+## The customer scenario
+
+Enterprise customer with multiple business lines needs autonomous AI operators across functions with strict separation of duties and audit trail.
+
+## My product canvas
+
+This case study is grounded in **Hermes Agent System** — a multi-agent operating system with four personas: Midas (revenue/content), Oracle (market intel), Plutus (trading oversight), Kuber (human interface via Telegram). Separation of duties enforced at the permission layer. Canonical writeup: [kaydenlabs.com/work/hermes-agent-system](https://kaydenlabs.com/work/hermes-agent-system).
+
+## Architectural patterns to be demonstrated
+
+- **Permission-layer separation of duties** — Midas cannot access trading controls, Plutus cannot publish social content; enforced by scoped tools, not by convention
+- **Per-agent scoped tool access with dedicated system prompts** — Postiz + Playwright for Midas, 5 native APIs for Oracle, direct WealthPilot hooks for Plutus, Telegram bot for Kuber
+- **Mission Control as the unified observability surface** — Next.js + SQLite dashboard, per-agent session persistence
+- **Human-gated approval before any external publication** — VIRALIS dashboard as content approval gate
+
+## What you'll find here when it ships
+
+- Architecture diagram
+- Eval set with results
+- Cost and latency analysis
+- Failure modes documented
+- "What I'd do differently" retro
