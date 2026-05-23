@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { supabase, type CaseStudy } from "@/lib/supabase";
 
-const SITE_URL = "https://fieldnotes.drewdigital.com";
+const SITE_URL = "https://fieldnotes.kaydenlabs.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();

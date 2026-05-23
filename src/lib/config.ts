@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   tagline: "Builder going deeper.",
   description:
     "Field notes from year one of specializing in AI engineering. Founder of six AI products learning what production deployment really looks like.",
-  url: "https://fieldnotes.drewdigital.com",
+  url: "https://fieldnotes.kaydenlabs.com",
   author: {
     name: "Kartikeya Parashar",
     email: "kart.parash@gmail.com",

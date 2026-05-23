@@ -65,7 +65,7 @@ export default function OpenGraphImage() {
             letterSpacing: "0.05em",
           }}
         >
-          fieldnotes.drewdigital.com
+          fieldnotes.kaydenlabs.com
         </div>
       </div>
     ),

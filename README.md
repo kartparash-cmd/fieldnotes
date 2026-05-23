@@ -2,7 +2,7 @@
 
 > Builder going deeper.
 
-The public-facing tracker site for a 12-month deliberate practice journey from AI generalist to specialist. Lives at [`fieldnotes.drewdigital.com`](https://fieldnotes.drewdigital.com).
+The public-facing tracker site for a 12-month deliberate practice journey from AI generalist to specialist. Lives at [`fieldnotes.kaydenlabs.com`](https://fieldnotes.kaydenlabs.com).
 
 This is also Case Study #7 of the journey — `/case-studies/tracker-build` — a writeup of building and dogfooding the tracker itself.
 
@@ -125,7 +125,7 @@ The single allowed addition Month 6+: a "concepts mastered" page pulled from an 
 
 ## Build & deploy
 
-See [`DEPLOY.md`](./DEPLOY.md) for full Vercel deployment instructions including env var configuration and DNS setup for `fieldnotes.drewdigital.com`.
+See [`DEPLOY.md`](./DEPLOY.md) for full Vercel deployment instructions including env var configuration and DNS setup for `fieldnotes.kaydenlabs.com`.
 
 ## License
 

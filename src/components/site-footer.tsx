@@ -10,7 +10,7 @@ export function SiteFooter() {
             Field Notes
           </div>
           <p className="text-muted-foreground">
-            © 2026 {SITE_CONFIG.author.name} / Drew Digital
+            © 2026 {SITE_CONFIG.author.name} / Kaydenlabs
           </p>
           <p className="text-muted-foreground">
             Field Notes is built in public — repo:{" "}

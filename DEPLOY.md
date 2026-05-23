@@ -5,7 +5,7 @@ Step-by-step deploy of Field Notes to Vercel. Run these from `~/Documents/code/f
 ## Prerequisites
 
 - Vercel account linked to your GitHub
-- DNS configured: `fieldnotes.drewdigital.com` CNAME → `cname.vercel-dns.com` (propagation may take a few minutes to a few hours)
+- DNS configured: `fieldnotes.kaydenlabs.com` CNAME → `cname.vercel-dns.com` (propagation may take a few minutes to a few hours)
 - Supabase project already provisioned with schema applied and seed data loaded
 
 ## Option A: Deploy via Vercel CLI (recommended for first deploy)
@@ -68,7 +68,7 @@ vercel --prod
 After the first deploy succeeds:
 
 1. In the Vercel dashboard → Project → Settings → Domains
-2. Add `fieldnotes.drewdigital.com`
+2. Add `fieldnotes.kaydenlabs.com`
 3. Vercel will verify the DNS CNAME (you already configured it pointing at `cname.vercel-dns.com`)
 4. Once verified, SSL provisions automatically (1-5 minutes)
 
@@ -76,7 +76,7 @@ After the first deploy succeeds:
 
 Open in order:
 
-- [https://fieldnotes.drewdigital.com](https://fieldnotes.drewdigital.com) → landing renders, "Field Notes / Builder going deeper." visible
+- [https://fieldnotes.kaydenlabs.com](https://fieldnotes.kaydenlabs.com) → landing renders, "Field Notes / Builder going deeper." visible
 - `/case-studies` → 7 case study cards (all "planned" status)
 - `/case-studies/enterprise-rag` → MDX placeholder for CS1 renders
 - `/journey` → empty heatmap, all stats at 0 (correct — no daily logs yet)

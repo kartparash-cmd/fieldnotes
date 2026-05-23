@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: `%s — ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
-  metadataBase: new URL("https://fieldnotes.drewdigital.com"),
+  metadataBase: new URL("https://fieldnotes.kaydenlabs.com"),
   alternates: {
     canonical: "/",
   },
@@ -52,7 +52,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Kartikeya Parashar",
-  url: "https://fieldnotes.drewdigital.com",
+  url: "https://fieldnotes.kaydenlabs.com",
   jobTitle: "VP Applied AI at Onclave; Founder, Kaydenlabs",
   knowsAbout: [
     "AI engineering",
