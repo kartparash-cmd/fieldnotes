@@ -21,7 +21,10 @@ export const metadata: Metadata = {
     template: `%s — ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
-  metadataBase: new URL(SITE_CONFIG.url),
+  metadataBase: new URL("https://fieldnotes.drewdigital.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: SITE_CONFIG.name,
     description: SITE_CONFIG.description,
@@ -45,6 +48,22 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Kartikeya Parashar",
+  url: "https://fieldnotes.drewdigital.com",
+  jobTitle: "VP Applied AI at Onclave; Founder, Kaydenlabs",
+  knowsAbout: [
+    "AI engineering",
+    "RAG",
+    "agents",
+    "evals",
+    "Forward Deployed Engineering",
+  ],
+  sameAs: ["https://github.com/kartparash-cmd", "https://kaydenlabs.com"],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -55,6 +74,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          // Static JSON-LD payload; no user input. Safe to inline.
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <SiteHeader />
         <main className="flex-1 w-full">{children}</main>

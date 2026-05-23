@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { supabase } from "@/lib/supabase";
 import type { DailyLog, User, CaseStudy } from "@/lib/supabase";
@@ -7,6 +6,7 @@ import { PhaseProgress } from "@/components/phase-progress";
 import { ActivityHeatmap } from "@/components/activity-heatmap";
 import { ComparisonView } from "@/components/comparison-view";
 import { RecentActivity } from "@/components/recent-activity";
+import { MilestoneTimeline } from "@/components/milestone-timeline";
 
 export const revalidate = 60;
 
@@ -111,17 +111,7 @@ export default async function JourneyPage() {
       </section>
 
       <section className="py-8">
-        <Card>
-          <CardHeader>
-            <CardTitle>Milestone timeline</CardTitle>
-            <CardDescription>
-              Milestone timeline lands in Weekend 2.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="py-2 text-sm text-muted-foreground">
-            21 milestones across 4 phases. Coming soon.
-          </CardContent>
-        </Card>
+        <MilestoneTimeline />
       </section>
 
       <section className="py-8">
