@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
 export const metadata = {
-  title: "Notes — Field Notes",
+  title: "Notes",
   description:
     "Curated, polished writeups. Different from Obsidian — Obsidian is the thinking, this is the publishing.",
 };

@@ -79,12 +79,12 @@ export async function generateMetadata({
   const study = await fetchCaseStudy(slug);
   if (!study) {
     return {
-      title: "Case Study Not Found — Field Notes",
+      title: "Case Study Not Found",
       description: "This case study could not be found.",
     };
   }
   return {
-    title: `${study.title} — Field Notes`,
+    title: study.title,
     description: study.one_line_summary,
   };
 }
@@ -144,7 +144,7 @@ export default async function CaseStudyDetailPage({
 
       <Separator className="my-8" />
 
-      <article className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-heading prose-h2:mt-10 prose-h2:text-xl prose-p:leading-relaxed">
+      <article className="prose prose-slate dark:prose-invert max-w-none">
         {mdxSource ? (
           <MDXRemote source={mdxSource} />
         ) : (

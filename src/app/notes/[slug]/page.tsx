@@ -109,12 +109,12 @@ export async function generateMetadata({
   const note = await readNote(slug);
   if (!note) {
     return {
-      title: "Note Not Found — Field Notes",
+      title: "Note Not Found",
       description: "This note could not be found.",
     };
   }
   return {
-    title: `${note.frontmatter.title} — Field Notes`,
+    title: note.frontmatter.title,
     description: note.frontmatter.summary,
   };
 }
@@ -166,7 +166,7 @@ export default async function NoteDetailPage({
 
       <Separator className="my-8" />
 
-      <article className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-heading prose-h2:mt-10 prose-h2:text-xl prose-p:leading-relaxed">
+      <article className="prose prose-slate dark:prose-invert max-w-none">
         <MDXRemote source={body} />
       </article>
     </main>

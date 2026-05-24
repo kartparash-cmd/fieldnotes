@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { supabase, type CaseStudy, type CaseStudyStatus } from "@/lib/supabase";
 
 export const metadata = {
-  title: "Case Studies — Field Notes",
+  title: "Case Studies",
   description:
     "Six case studies grounded in real products. The seventh is this site itself.",
 };

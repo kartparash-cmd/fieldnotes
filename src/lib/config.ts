@@ -8,8 +8,9 @@ export const SITE_CONFIG = {
     name: "Kartikeya Parashar",
     email: "kart.parash@gmail.com",
     twitter: "",
-    github: "",
-    linkedin: "",
+    github: "https://github.com/kartparash-cmd",
+    linkedin: "", // TODO: real LinkedIn URL
+    kaydenlabs: "https://kaydenlabs.com",
   },
 };
 

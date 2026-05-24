@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Separator } from "@/components/ui/separator";
 import { supabase } from "@/lib/supabase";
 import type { DailyLog, User, CaseStudy } from "@/lib/supabase";
@@ -7,6 +8,8 @@ import { ActivityHeatmap } from "@/components/activity-heatmap";
 import { ComparisonView } from "@/components/comparison-view";
 import { RecentActivity } from "@/components/recent-activity";
 import { MilestoneTimeline } from "@/components/milestone-timeline";
+
+export const metadata: Metadata = { title: "Journey" };
 
 export const revalidate = 60;
 

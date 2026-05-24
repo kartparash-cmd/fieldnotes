@@ -27,18 +27,30 @@ export function SiteFooter() {
             Elsewhere
           </span>
           <div className="flex flex-wrap gap-4 text-muted-foreground">
-            <Link
-              href={SITE_CONFIG.author.github || "#"}
-              className="hover:text-foreground"
-            >
-              GitHub
-            </Link>
-            <Link
-              href={SITE_CONFIG.author.linkedin || "#"}
-              className="hover:text-foreground"
-            >
-              LinkedIn
-            </Link>
+            {SITE_CONFIG.author.github ? (
+              <Link
+                href={SITE_CONFIG.author.github}
+                className="hover:text-foreground"
+              >
+                GitHub
+              </Link>
+            ) : null}
+            {SITE_CONFIG.author.linkedin ? (
+              <Link
+                href={SITE_CONFIG.author.linkedin}
+                className="hover:text-foreground"
+              >
+                LinkedIn
+              </Link>
+            ) : null}
+            {SITE_CONFIG.author.kaydenlabs ? (
+              <Link
+                href={SITE_CONFIG.author.kaydenlabs}
+                className="hover:text-foreground"
+              >
+                Kaydenlabs
+              </Link>
+            ) : null}
             <Link
               href={`mailto:${SITE_CONFIG.author.email}`}
               className="hover:text-foreground"

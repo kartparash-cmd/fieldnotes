@@ -47,16 +47,16 @@ const FLAGSHIPS = [
 
 export default function AboutPage() {
   const email = SITE_CONFIG.author.email || "kart.parash@gmail.com";
-  const github = SITE_CONFIG.author.github || "https://github.com/kartparash-cmd";
-  const linkedin = SITE_CONFIG.author.linkedin || "https://www.linkedin.com/";
+  const github = SITE_CONFIG.author.github;
+  const linkedin = SITE_CONFIG.author.linkedin;
+  const kaydenlabs = SITE_CONFIG.author.kaydenlabs;
 
   return (
     <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
       {/* Section 1: Hero */}
       <section className="flex flex-col items-start gap-6 pt-16 pb-12 sm:pt-24 sm:pb-16">
-        {/* [PHOTO HERE] */}
-        <div className="flex h-32 w-32 items-center justify-center rounded-2xl border border-dashed border-border bg-muted/30 text-xs uppercase tracking-wider text-muted-foreground">
-          [Photo]
+        <div className="flex h-32 w-32 items-center justify-center rounded-full bg-slate-200 text-3xl font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+          KP
         </div>
         <h1 className="font-heading text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
           Kartikeya Parashar
@@ -209,27 +209,33 @@ export default function AboutPage() {
             <Mail className="h-4 w-4" aria-hidden />
             Email
           </Link>
-          <Link
-            href={github}
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted/40"
-          >
-            <Code className="h-4 w-4" aria-hidden />
-            GitHub
-          </Link>
-          <Link
-            href={linkedin}
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted/40"
-          >
-            <Briefcase className="h-4 w-4" aria-hidden />
-            LinkedIn
-          </Link>
-          <Link
-            href="https://kaydenlabs.com"
-            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted/40"
-          >
-            <Globe className="h-4 w-4" aria-hidden />
-            Kaydenlabs
-          </Link>
+          {github ? (
+            <Link
+              href={github}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted/40"
+            >
+              <Code className="h-4 w-4" aria-hidden />
+              GitHub
+            </Link>
+          ) : null}
+          {linkedin ? (
+            <Link
+              href={linkedin}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted/40"
+            >
+              <Briefcase className="h-4 w-4" aria-hidden />
+              LinkedIn
+            </Link>
+          ) : null}
+          {kaydenlabs ? (
+            <Link
+              href={kaydenlabs}
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted/40"
+            >
+              <Globe className="h-4 w-4" aria-hidden />
+              Kaydenlabs
+            </Link>
+          ) : null}
         </div>
       </section>
 

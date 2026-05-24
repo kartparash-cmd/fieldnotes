@@ -101,71 +101,89 @@ export default async function Home() {
 
       <Separator />
 
-      {/* Latest */}
-      <section className="py-12">
-        <div className="mb-6 flex items-baseline justify-between">
-          <h2 className="font-heading text-xl font-semibold tracking-tight">
-            Latest
-          </h2>
-          <Link
-            href="/journey"
-            className="text-sm text-muted-foreground hover:text-foreground"
-          >
-            See all →
-          </Link>
-        </div>
-        {latestLogs.length === 0 ? (
+      {latestLogs.length > 0 ? (
+        <>
+          {/* Latest */}
+          <section className="py-12">
+            <div className="mb-6 flex items-baseline justify-between">
+              <h2 className="font-heading text-xl font-semibold tracking-tight">
+                Latest
+              </h2>
+              <Link
+                href="/journey"
+                className="text-sm text-muted-foreground hover:text-foreground"
+              >
+                See all →
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {latestLogs.map((log) => (
+                <Card key={log.id} size="sm">
+                  <CardHeader>
+                    <CardTitle className="text-sm text-muted-foreground">
+                      {formatLogDate(log.log_date)}
+                    </CardTitle>
+                    <CardDescription className="text-foreground">
+                      {log.activity_description ?? "Logged activity"}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-xs text-muted-foreground">
+                      {log.hours_logged ?? 0} hrs
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          <Separator />
+
+          {/* Stats */}
+          <section className="py-12">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <Card>
+                <CardHeader>
+                  <CardDescription>Total hours logged</CardDescription>
+                  <CardTitle className="font-heading text-4xl font-semibold tracking-tight">
+                    {totalHours}
+                  </CardTitle>
+                </CardHeader>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardDescription>Case studies published</CardDescription>
+                  <CardTitle className="font-heading text-4xl font-semibold tracking-tight">
+                    {totalPublishedCaseStudies}
+                  </CardTitle>
+                </CardHeader>
+              </Card>
+            </div>
+          </section>
+        </>
+      ) : (
+        /* Week 1 commitment panel — shown until daily logs accumulate */
+        <section className="py-12">
           <Card>
-            <CardContent className="py-8 text-center text-sm text-muted-foreground">
-              First logs land here once the journey starts.
+            <CardHeader>
+              <CardDescription className="text-xs uppercase tracking-wide">
+                This week&apos;s commitment
+              </CardDescription>
+              <CardTitle className="font-heading text-xl font-medium leading-relaxed tracking-tight text-foreground sm:text-2xl">
+                {CURRENT_WEEK_TARGET}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <Link
+                href="/journey"
+                className="inline-flex items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                See the full 12-month timeline →
+              </Link>
             </CardContent>
           </Card>
-        ) : (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {latestLogs.map((log) => (
-              <Card key={log.id} size="sm">
-                <CardHeader>
-                  <CardTitle className="text-sm text-muted-foreground">
-                    {formatLogDate(log.log_date)}
-                  </CardTitle>
-                  <CardDescription className="text-foreground">
-                    {log.activity_description ?? "Logged activity"}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-xs text-muted-foreground">
-                    {log.hours_logged ?? 0} hrs
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        )}
-      </section>
-
-      <Separator />
-
-      {/* Stats */}
-      <section className="py-12">
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <Card>
-            <CardHeader>
-              <CardDescription>Total hours logged</CardDescription>
-              <CardTitle className="font-heading text-4xl font-semibold tracking-tight">
-                {totalHours}
-              </CardTitle>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardDescription>Case studies published</CardDescription>
-              <CardTitle className="font-heading text-4xl font-semibold tracking-tight">
-                {totalPublishedCaseStudies}
-              </CardTitle>
-            </CardHeader>
-          </Card>
-        </div>
-      </section>
+        </section>
+      )}
 
       <Separator />
 
